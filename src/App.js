@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Navigation from "./majorcomponents/Navigation";
+import ProductPage from "./majorcomponents/ProductPage";
+import Profile from "./majorcomponents/Profile";
+import Cart from "./majorcomponents/Cart";
+import Orders from "./majorcomponents/Orders";
+
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+      <Navigation />
+      <div className="content">
+        <Switch>
+          
+          <Route path="/products" exact component={ProductPage} />
+          <Route path="/orders" exact component={Orders} />
+          <Route path="/cart" exact component={Cart} />
+          <Route path="/profile" exact component={Profile} />
+        </Switch>
+        </div>
+      </Router>
     </div>
   );
 }
 
 export default App;
+
+//mockapi
+//json-server

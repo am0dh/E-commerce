@@ -1,0 +1,113 @@
+{
+    
+
+    "productType":[
+        "gym","yoga","supplements"
+    ],
+
+    "gym":[
+
+        {   
+            "id":"XYZ1",
+            "type":"gym",
+            "brand":"mafia_mundeer",
+            "title":"Dumbbell",
+            "description":"A set of two dumbbells",
+            "price":500,
+            "image":"/images/XYZ"
+            
+        },
+        {   
+            "id":"XYZ2",
+            "type":"gym",
+            "brand":"mafia_mundeer",
+            "title":"Barbell",
+            "description":"A barbell and set of weights",
+            "price":1000,
+            "image":"/images/XYZ2"
+            
+        },
+        {   
+            "id":"XYZ3",
+            "type":"gym",
+            "brand":"kali_denali",
+            "title":"Gym Bench",
+            "description":"A bench for exercise",
+            "price":1200,
+            "image":"/images/XYZ3"
+            
+        },
+        {   
+            "id":"XYZ4",
+            "type":"gym",
+            "brand":"kali_denali",
+            "title":"Dumbbell",
+            "description":"A set of two dumbbells",
+            "price":600,
+            "image":"/images/XYZ4"
+            
+        },
+        {   
+            "id":"XYZ5",
+            "type":"gym",
+            "brand":"mafia_mundeer",
+            "title":"Skipping Rope",
+            "description":"A skipping rope 3 meteres long",
+            "price":200,
+            "image":"/images/XYZ5"
+            
+        }
+
+    ],
+
+    "yoga":[
+         
+        {   
+            "id":"YOG1",
+            "type":"yoga",
+            "brand":"mafia_mundeer",
+            "title":"Yoga Mat",
+            "description":"A Yoga Mat",
+            "price":500,
+            "image":"/images/YOG1"
+            
+        },
+        {   
+            "id":"YOG2",
+            "type":"yoga",
+            "brand":"kali_denali",
+            "title":"Yoga Mat",
+            "description":"A Yoga Mat",
+            "price":100,
+            "image":"/images/YOG2"
+            
+        }
+
+    ],
+
+    "supplements":[
+        {   
+            "id":"SUP1",
+            "type":"supplements",
+            "brand":"mafia_mundeer",
+            "title":"Protien Powder",
+            "description":"Protien supplement",
+            "price":1500,
+            "image":"/images/YOG1"
+            
+        },
+        {   
+            "id":"SUP2",
+            "type":"supplements",
+            "brand":"kali_denali",
+            "title":"Creatine powder",
+            "description":"Pre Workout",
+            "price":1000,
+            "image":"/images/YOG2"
+            
+        }
+
+    ]
+
+
+}
