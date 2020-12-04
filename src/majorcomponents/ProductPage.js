@@ -6,6 +6,26 @@ import { fetchProductTypes,fetchProductsByType } from "../actions/productTypesAc
 
 function ProductPage() {
 
+    // <li class="nav-item dropdown">
+    //     <a className="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    //       Dropdown link
+    //     </a>
+    //     <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+    //     {productTypes.name
+    //           ? productTypes.name.map((item) => (
+    //               <NavLink
+    //               className="dropdown-item"
+    //                 to="/products"
+                    
+    //                 onClick={() => handleProductClicked(item)}
+    //               >
+    //                 {item}
+    //               </NavLink>
+    //             ))
+    //           : ""}
+    //     </div>
+    //   </li>
+
     const productTypes=useSelector(state=> state.productReducer)
     const dispatch = useDispatch()
 
@@ -18,16 +38,10 @@ function ProductPage() {
         }
     }, [])
 
-    const handleProductClicked =(item)=>{
-
-        dispatch(fetchProductsByType(item))
-
-    }
   return <div>
 
-{productTypes.name?productTypes.name.map((item)=><button onClick={()=>handleProductClicked(item)}>{item}</button>):''}
-    <br />
-    {productTypes.products?productTypes.products.map((item)=><Product key={item.id} data={item}></Product>):'ghar jao wapas'}  
+   <br />
+    {productTypes.products?productTypes.products.map((item)=><Product key={item.id} data={item} ></Product>):'ghar jao wapas'}  
       </div>;
 }
 
