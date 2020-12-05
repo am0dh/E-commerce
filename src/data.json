@@ -1,5 +1,5 @@
 {
-  "productType": ["gym", "yoga", "supplements"],
+  "productType": ["gym", "yoga", "supplements","allProducts"],
   "allProducts": [
     {
       "id": "SUP1",

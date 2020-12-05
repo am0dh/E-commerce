@@ -37,8 +37,32 @@ function ProductPage() {
         return () => {
         }
     }, [])
+    const handleProductClicked=(item)=>{
+        dispatch(fetchProductsByType(item))
+    }
+
+
 
   return <div>
+
+<div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Dropdown button
+  </button>
+  <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+  {productTypes.name
+              ? productTypes.name.map((item) => (
+                  <div
+                  className="dropdown-item"
+                    onClick={() => handleProductClicked(item)}
+                  > {item}</div> ))
+                         : ""}
+  </div>
+</div>
+
+
+
+
 
    <br />
     {productTypes.products?productTypes.products.map((item)=><Product key={item.id} data={item} ></Product>):'ghar jao wapas'}  
