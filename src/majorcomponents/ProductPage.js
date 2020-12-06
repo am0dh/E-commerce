@@ -1,75 +1,104 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import Product from "./singleproduct/Product";
-import { connect } from "react-redux";
-import { fetchProductTypes,fetchProductsByType } from "../actions/productTypesAction";
+
+import {
+  fetchProductTypes,
+  fetchProductsByType,
+  searchByTitle,
+} from "../actions/productTypesAction";
 
 function ProductPage() {
+  const productState = useSelector((state) => state.productReducer);
+  const productsArr=useSelector((state)=> state.productReducer.products)
+  const dispatch = useDispatch();
 
-    // <li class="nav-item dropdown">
-    //     <a className="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    //       Dropdown link
-    //     </a>
-    //     <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-    //     {productTypes.name
-    //           ? productTypes.name.map((item) => (
-    //               <NavLink
-    //               className="dropdown-item"
-    //                 to="/products"
-                    
-    //                 onClick={() => handleProductClicked(item)}
-    //               >
-    //                 {item}
-    //               </NavLink>
-    //             ))
-    //           : ""}
-    //     </div>
-    //   </li>
-
-    const productTypes=useSelector(state=> state.productReducer)
-    const dispatch = useDispatch()
-
-    console.log(productTypes,'ProductPage')
+  const handleSearchChange = (event) => {
     
-    useEffect(() => {
-        console.log('useEffect productpage')
-        dispatch(fetchProductTypes());
-        return () => {
-        }
-    }, [])
-    const handleProductClicked=(item)=>{
-        dispatch(fetchProductsByType(item))
-    }
+    dispatch(searchByTitle(event.target.value));
+    console.log(productState.search)
+  };
 
+  const handlePriceFilter=(event)=>{
 
+  }
+  const handleProductClicked = (item) => {
+    dispatch(fetchProductsByType(item));
+  };
 
-  return <div>
+  useEffect(() => {
+    console.log("useEffect productpage");
+    dispatch(fetchProductTypes());
+    dispatch(fetchProductsByType('allProducts'));
+    return () => {};
+  }, []);
+  
+  
 
-<div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Dropdown button
-  </button>
-  <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-  {productTypes.name
-              ? productTypes.name.map((item) => (
-                  <div
+  return (
+    <div>
+      <div className="dropdown" style={{ display: "inline-block", margin: "10px" }}>
+        <button
+          className="btn btn-secondary dropdown-toggle btn-sm"
+          type="button"
+          id="dropdownMenuButton"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
+          Product Type
+        </button>
+        <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          {productState.name
+            ? productState.name.map((item) => (
+                <div
                   className="dropdown-item"
-                    onClick={() => handleProductClicked(item)}
-                  > {item}</div> ))
-                         : ""}
-  </div>
+                  onClick={() => handleProductClicked(item)}
+                >
+                  {" "}
+                  {item}
+                </div>
+              ))
+            : ""}
+        </div>
+      </div>
+
+      <form
+        style={{ display: "inline-block", margin: "10px" }}
+        className="form-inline md-form mr-auto mb-4"
+      >
+        
+        <input
+          onChange={(e) => handleSearchChange(e)}
+          className="form-control form-control-sm mr-3 w-75"
+          type="text"
+          placeholder="Search"
+          aria-label="Search"
+        />
+        
+      </form>
+      <div className="form-check form-check-inline">
+  <input className="form-check-input" type="radio" name="priceRange" value="low2high" />
+  <label className="form-check-label" htmlFor="inlineRadio1">Price: Low to High</label>
+</div>
+<div className="form-check form-check-inline">
+  <input className="form-check-input" type="radio" name="priceRange" value="high2low" />
+  <label className="form-check-label" htmlFor="inlineRadio2">Price: High to Low</label>
 </div>
 
-
-
-
-
-   <br />
-    {productTypes.products?productTypes.products.map((item)=><Product key={item.id} data={item} ></Product>):'ghar jao wapas'}  
-      </div>;
+      <br />
+      {productsArr
+        ? productsArr.map((item) => {
+          if(productState.search===undefined || productState.search===''){return<Product key={item.id} data={item}></Product>}
+          else if(item.title.toLowerCase().includes(productState.search.toLowerCase())){return<Product key={item.id} data={item}></Product>}
+        }
+          )
+        : "ghar jao wapas"}
+    </div>
+  );
 }
 
-export default ProductPage
-// connect((state) => ({ productsTypes: state.productTypes}), {
+export default ProductPage;
+// connect((state) => ({ productsTypes: state.productState}), {
 //   fetchProductTypes,
 // })(ProductPage);

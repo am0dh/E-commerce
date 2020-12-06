@@ -1,18 +1,9 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "./css/Navigation.css";
 import { NavLink } from "react-router-dom";
 
-import { useDispatch } from "react-redux";
-
-import { fetchProductTypes } from "../actions/productTypesAction";
 
 const Navigation = () => {
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(fetchProductTypes());
-    return () => {};
-  }, []);
 
   return (
     <>

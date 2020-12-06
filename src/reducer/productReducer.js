@@ -1,16 +1,22 @@
-import {FETCH_PROD_TYPES,FETCH_SPECIFIC_TYPE} from '../types'
+import {
+  FETCH_PROD_TYPES,
+  FETCH_SPECIFIC_TYPE,
+  FILTER_BY_SEARCH,
+} from "../types";
 
-
-
-export const productReducer=(state={},action)=>{
-    switch(action.type){
+export const productReducer = (state = { search: "" }, action) => {
+  switch (action.type) {
     case FETCH_PROD_TYPES:
-        console.log("[FETCH_PROD_TYPES]",action.payload)
-        return {name:action.payload}
+      return { name: action.payload };
+
     case FETCH_SPECIFIC_TYPE:
-        console.log('[FETCH_SPECIFIC_TYPE]',action.payload)
-        return {...state,products:action.payload}
+      return { ...state, products: action.payload };
+
+    case FILTER_BY_SEARCH:
+        console.log(action.payload)
+      return { ...state, search: action.payload };
+
     default:
-        return state;
-    }
-}
+      return state;
+  }
+};
