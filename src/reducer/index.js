@@ -1,10 +1,13 @@
-import {productReducer} from './productReducer'
+
 import {cartReducer} from './cartReducer'
+import {appReducer} from './appReducer'
+
 import {combineReducers} from 'redux'
 
+
 const allReducers=combineReducers({
-   productReducer:productReducer
-   ,cartReducer:cartReducer
+   
+   appReducer:appReducer
 })
 
 export default allReducers;

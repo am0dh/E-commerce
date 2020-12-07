@@ -2,9 +2,7 @@ import React from "react";
 import "./css/Navigation.css";
 import { NavLink } from "react-router-dom";
 
-
 const Navigation = () => {
-
   return (
     <>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -35,18 +33,14 @@ const Navigation = () => {
               </NavLink>
             </li>
             <li className="nav-item">
-              <li>
-                <NavLink className="nav-link" to="/orders">
-                  Orders
-                </NavLink>
-              </li>
+              <NavLink className="nav-link" to="/orders">
+                Orders
+              </NavLink>
             </li>
             <li className="nav-item">
-              <li>
-                <NavLink className="nav-link" to="/products">
-                  Products
-                </NavLink>
-              </li>
+              <NavLink className="nav-link" to="/products">
+                Products
+              </NavLink>
             </li>
           </ul>
         </div>

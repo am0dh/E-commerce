@@ -1,5 +1,6 @@
 {
-  "productType": ["gym", "yoga", "supplements","allProducts"],
+  "productType": ["gym", "yoga", "supplements"],
+  "brands":["kali_denali","mafia_mundeer"],
   "allProducts": [
     {
       "id": "SUP1",
