@@ -1,21 +1,33 @@
 //components import
-import Navigation from "./majorcomponents/Navigation";
-import ProductPage from "./majorcomponents/ProductPage";
-import Profile from "./majorcomponents/Profile";
-import Cart from "./majorcomponents/Cart";
-import Orders from "./majorcomponents/Orders";
-import LandingPage from "./majorcomponents/LandingPage";
+import Navigation from "./components/Navigation";
+import ProductPage from "./pages/ProductPage";
+import Profile from "./pages/Profile";
+import Cart from "./pages/Cart";
+import Orders from "./pages/Orders";
+import LandingPage from "./pages/LandingPage";
 //project dependences import
-import { useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { useEffect } from "react";
 //action import
 import { fetchProductsData } from "./actions/appAction";
 
 function App() {
+  const {typeFiltering, brandFiltering, priceHigh, priceLow}=useSelector((state)=>{return {
+    typeFiltering:state.appReducer.typeFiltering,
+    brandFiltering:state.appReducer.brandFiltering,
+    priceLow:state.appReducer.priceLow,
+    priceHigh:state.appReducer.priceHigh
+  }})
   const dispatch = useDispatch();
 
-  useEffect(() => dispatch(fetchProductsData()), []);
+  useEffect(
+    () =>
+      dispatch(
+        fetchProductsData(typeFiltering, brandFiltering, priceHigh, priceLow)
+      ),
+    []
+  );
 
   return (
     <div className="">

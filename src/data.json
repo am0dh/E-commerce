@@ -1,6 +1,7 @@
 {
   "productType": ["gym", "yoga", "supplements"],
   "brands":["kali_denali","mafia_mundeer"],
+  "totalProducts":["18"],
   "allProducts": [
     {
       "id": "SUP1",
@@ -18,6 +19,24 @@
       "title": "Creatine powder",
       "description": "Pre Workout",
       "price": 1000,
+      "image": "/images/YOG2"
+    },
+    {
+      "id": "SUP3",
+      "type": "supplements",
+      "brand": "kali_denali",
+      "title": "Protien powder",
+      "description": "Protien Supplement Workout",
+      "price": 1300,
+      "image": "/images/YOG2"
+    },
+    {
+      "id": "SUP4",
+      "type": "supplements",
+      "brand": "mafia_mundeer",
+      "title": "Creatine powder",
+      "description": "Pre Workout",
+      "price": 900,
       "image": "/images/YOG2"
     },
     {
@@ -81,6 +100,16 @@
       "title": "Yoga Mat",
       "description": "A Yoga Mat",
       "price": 100,
+      "image": "/images/YOG2"
+    }
+    ,
+    {
+      "id": "YOG3",
+      "type": "yoga",
+      "brand": "kali_denali",
+      "title": "Yoga Book",
+      "description": "Yoga book",
+      "price": 400,
       "image": "/images/YOG2"
     }
   ],
