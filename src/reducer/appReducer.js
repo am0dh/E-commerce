@@ -37,6 +37,8 @@ export const appReducer = (state = { ...initialState }, action) => {
         priceHigh: 9999,
       };
 
+    
+
     case "SET_PAGE_NUMBER":
         console.log(action.payload)
       return { ...state, pageNumber: action.payload };

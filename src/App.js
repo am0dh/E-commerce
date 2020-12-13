@@ -3,13 +3,14 @@ import Navigation from "./components/Navigation";
 import ProductPage from "./pages/ProductPage";
 import Profile from "./pages/Profile";
 import Cart from "./pages/Cart";
-import Orders from "./pages/Orders";
 import LandingPage from "./pages/LandingPage";
+
 //project dependences import
 import { useSelector, useDispatch } from "react-redux";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { useEffect } from "react";
 //action import
+
 import { fetchProductsData } from "./actions/appAction";
 
 function App() {
@@ -37,8 +38,7 @@ function App() {
           <Switch>
             <Route path="/" exact component={LandingPage} />
             <Route path="/products" exact component={ProductPage} />
-            <Route path="/orders" exact component={Orders} />
-            <Route path="/cart" exact component={Cart} />
+           <Route path="/cart" exact component={Cart} />
             <Route path="/profile" exact component={Profile} />
           </Switch>
         </div>

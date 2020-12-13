@@ -1,14 +1,31 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import {connect} from 'react-redux'
+import {useDispatch} from 'react-redux'
+import CartProduct from '../components/CartProduct'
+import Product from '../components/Product'
 
-
-function Cart() {
+function Cart(props) {
     
     
+    const cartArr=props.cartReducer.cartProducts
+
+
     return (
         <div>
-            cart
+            {
+           cartArr.length!=0? cartArr.map((item,index)=><CartProduct data={item.product} quantity={item.quantity} key={index} index={index} />) : 'loading'
+            }
         </div>
     )
 }
 
-export default Cart
+
+const mapPropsToState=(state,ownProps)=>{
+
+    return {
+        cartReducer:state.cartReducer
+    }
+
+}
+
+export default connect(mapPropsToState)(Cart)

@@ -1,7 +1,22 @@
 import React from "react";
 import "./Product.css";
+import { useDispatch } from "react-redux";
+import {addToCart} from '../actions/cartAction'
+
+
+
+
 function Product(props) {
   const style = { width: "18rem", display: "inline-block", margin: "20px" };
+  const dispatch=useDispatch();
+
+  const handleCartAdder=()=>{
+    
+    dispatch(addToCart(props.data))
+  }
+
+
+
   return (
     <div className="card" style={style}>
       <img className="card-img-top" src="..." alt="Card image cap" />
@@ -17,7 +32,7 @@ function Product(props) {
         </li>
       </ul>
       <div className="card-body">
-        <div className="btn btn-secondary btn-sm">Add To Cart</div>
+        <div onClick={handleCartAdder} className="btn btn-secondary btn-sm">Add To Cart</div>
       </div>
     </div>
   );
