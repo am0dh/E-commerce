@@ -138,7 +138,7 @@
     "orders": ["order1", "order2"],
     "cart": [
       {
-        "price": 1500,
+        
         "product": {
           "id": "SUP1",
           "type": "supplements",
@@ -148,7 +148,8 @@
           "price": 1500,
           "image": "/images/YOG1"
         },
-        "quantity": 1
+        "quantity": 1,
+        "price": 1500
       }
     ]
   }

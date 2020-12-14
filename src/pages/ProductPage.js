@@ -4,15 +4,12 @@ import {
   setFilteringState,
   setSearchState,
   resetFiltering,
-  setSelectedPage
+  setSelectedPage,
 } from "../actions/appAction";
 import { fetchProductsData } from "../actions/appAction";
-import { connect,useDispatch } from "react-redux";
+import { connect, useDispatch } from "react-redux";
 import ReactPaginate from "react-paginate";
-import './ProductPage.css'
-
-
-
+import "./ProductPage.css";
 
 function ProductPage(props) {
   //extracting data from props
@@ -25,19 +22,16 @@ function ProductPage(props) {
   const typeFiltering = props.typeFiltering;
   const priceHigh = props.priceHigh;
   const priceLow = props.priceLow;
-  const pageNumber=props.pageNumber;
-  const totalProducts=props.totalProducts
-  
+  const pageNumber = props.pageNumber;
+  const totalProducts = props.totalProducts;
 
   const dispatch = useDispatch();
-
 
   //refs for filtering form
   const productTypeRef = useRef(null);
   const brandTypeRef = useRef(null);
   const priceRangeStart = useRef(null);
   const priceRangeEnd = useRef(null);
-
 
   // submits filtering data
   const handleFilterSubmit = (e) => {
@@ -64,8 +58,6 @@ function ProductPage(props) {
     }
   };
 
-
-
   //handle Search
   const handleSearch = (e) => {
     dispatch(setSearchState(e.target.value));
@@ -76,37 +68,41 @@ function ProductPage(props) {
     dispatch(resetFiltering());
   };
 
-
-
   //pagination functions
-  const pageCount=Math.ceil(totalProducts/8 )
+  const pageCount = Math.ceil(totalProducts / 8);
 
-  const handlePageClick=({ selected: selectedPage })=>{
-   
-    dispatch(setSelectedPage(selectedPage+1))
-  }
-
-
+  const handlePageClick = ({ selected: selectedPage }) => {
+    dispatch(setSelectedPage(selectedPage + 1));
+  };
 
   //calls filtered product api when the filtering parameters are changed
   useEffect(
     () =>
       dispatch(
-        fetchProductsData(typeFiltering, brandFiltering, priceHigh, priceLow,pageNumber)
+        fetchProductsData(
+          typeFiltering,
+          brandFiltering,
+          priceHigh,
+          priceLow,
+          pageNumber
+        )
       ),
-    [props.brandFiltering, props.typeFiltering, props.priceHigh, props.priceLow, props.pageNumber]
+    [
+      props.brandFiltering,
+      props.typeFiltering,
+      props.priceHigh,
+      props.priceLow,
+      props.pageNumber,
+    ]
   );
 
-  
   return (
     <div>
       <form onSubmit={handleFilterSubmit}>
         <div style={{ display: "inline-block", margin: "10px", width: 300 }}>
           <div className="form-group">
             <select className="form-control" ref={productTypeRef}>
-              <option selected>
-                --Product Type--
-              </option>
+              <option selected>--Product Type--</option>
               {productType.length !== 0
                 ? productType.map((item) => {
                     if (item === typeFiltering) {
@@ -133,9 +129,7 @@ function ProductPage(props) {
         <div style={{ display: "inline-block", margin: "10px", width: 300 }}>
           <div className="form-group">
             <select className="form-control" ref={brandTypeRef}>
-              <option selected >
-                --Brand Type--
-              </option>
+              <option selected>--Brand Type--</option>
               {brands.length !== 0
                 ? brands.map((item) => {
                     if (item === brandFiltering) {
@@ -197,7 +191,7 @@ function ProductPage(props) {
           Set Filtering
         </button>
         <button
-        type="reset"
+          type="reset"
           style={{ margin: "10px", display: "inline-flex" }}
           onClick={handleResetFiltering}
           className="btn btn-outline-secondary btn-sm"
@@ -227,9 +221,9 @@ function ProductPage(props) {
           />
         </div>
       </div>
-<hr />
-     <br />
-    
+      <hr />
+      <br />
+
       {products.length !== 0
         ? products.map((item) => {
             if (
@@ -241,9 +235,9 @@ function ProductPage(props) {
           })
         : "loading"}
 
-<hr />
+      <hr />
 
-<ReactPaginate
+      <ReactPaginate
         previousLabel={"← Previous"}
         nextLabel={"Next →"}
         pageCount={pageCount}
@@ -253,9 +247,9 @@ function ProductPage(props) {
         nextLinkClassName={"pagination__link"}
         disabledClassName={"pagination__link--disabled"}
         activeClassName={"pagination__link--active"}
-        initialPage={pageNumber-1}
+        initialPage={pageNumber - 1}
       />
-<hr />
+      <hr />
     </div>
   );
 }
@@ -270,7 +264,7 @@ function mapStateToProps(state, ownProps) {
     priceLow: state.appReducer.priceLow,
     products: state.appReducer.products,
     pageNumber: state.appReducer.pageNumber,
-    totalProducts: state.appReducer.totalProducts
+    totalProducts: state.appReducer.totalProducts,
   };
 }
 

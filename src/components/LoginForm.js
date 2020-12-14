@@ -13,7 +13,7 @@ const passwordRef=useRef(null)
 
 const handleLoginSubmit=(e)=>{
     e.preventDefault()
-    console.log(passwordRef.current.value)
+   
     dispatch(loginChecker(emailRef.current.value,passwordRef.current.value))
 }
 

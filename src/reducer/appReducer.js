@@ -40,7 +40,7 @@ export const appReducer = (state = { ...initialState }, action) => {
     
 
     case "SET_PAGE_NUMBER":
-        console.log(action.payload)
+       
       return { ...state, pageNumber: action.payload };
     default:
       return state;

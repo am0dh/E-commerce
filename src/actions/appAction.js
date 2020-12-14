@@ -30,13 +30,12 @@ export const fetchProductsData = (
   const productTypeData = await productType.json();
   const brands = await fetch("http://localhost:3000/brands");
   const brandsData = await brands.json();
-  
 
   const data = {
     products: [...allProductsData],
     productType: [...productTypeData],
     brands: [...brandsData],
-    totalProductsDisplayed: allProducts.length
+    totalProductsDisplayed: allProducts.length,
   };
   dispatch({
     type: "FETCH_PRODUCTS_DATA",
@@ -66,17 +65,15 @@ export const resetFiltering = (data) => async (dispatch) => {
 };
 
 export const setSelectedPage = (data) => async (dispatch) => {
- 
   dispatch({
-    type: 'SET_PAGE_NUMBER',
+    type: "SET_PAGE_NUMBER",
     payload: data,
   });
 };
 
-export const resetPageNumber=()=> async (dispatch)=>{
-
+export const resetPageNumber = () => async (dispatch) => {
   dispatch({
-    type:'SET_PAGE_NUMBER',
-    payload:1
-  })
-}
+    type: "SET_PAGE_NUMBER",
+    payload: 1,
+  });
+};
