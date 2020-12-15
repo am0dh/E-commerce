@@ -1,5 +1,9 @@
+let user = JSON.parse(localStorage.getItem('user'));
+
+
 let initialState = {
-  isLoggedIn: false,
+    loggingIn:false,
+  isLoggedIn: user?true:false,
   userDetails: "",
   userOrders: [],
 };
@@ -7,7 +11,6 @@ let initialState = {
 export const loginReducer = (state = { ...initialState }, action) => {
   switch (action.type) {
     case "ADD_USER_INFO":
-      
       return { state, ...action.payload };
     case "FETCH_ORDERS_FROM_USER_ORDERS":
       return { state, userOrders: [...state.userOrders, ...action.payload] };
