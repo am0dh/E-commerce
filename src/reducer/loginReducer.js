@@ -1,19 +1,19 @@
-let user = JSON.parse(localStorage.getItem('user'));
 
 
 let initialState = {
-    loggingIn:false,
-  isLoggedIn: user?true:false,
-  userDetails: "",
-  userOrders: [],
+    loggedIn:false,
+    email:null
+    
 };
 
 export const loginReducer = (state = { ...initialState }, action) => {
   switch (action.type) {
-    case "ADD_USER_INFO":
-      return { state, ...action.payload };
-    case "FETCH_ORDERS_FROM_USER_ORDERS":
-      return { state, userOrders: [...state.userOrders, ...action.payload] };
+    case "SET_USER":
+      return {state,...action.payload}
+    case "RESET_USER":
+      return{state,email:null,loggedIn:false}
+
+    
     default:
       return state;
   }

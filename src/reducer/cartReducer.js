@@ -17,8 +17,9 @@ export const cartReducer = (state = initialState, action) => {
           prodCartArr.push(action.payload);
         }
       }
-
       return { ...state, cartProducts: [...prodCartArr] };
+
+
 
     case "FETCH_PRODUCTS_FROM_USER_CART":
     //below code for Array.prototypr.unique() is picked from stackoverflow 
@@ -33,7 +34,6 @@ export const cartReducer = (state = initialState, action) => {
         return a;
       };
       //statckoverflow code ends
-
       let userCart = [...action.payload];
       let stateCart = [...state.cartProducts];
       let filteredArr = userCart.concat(stateCart).unique();
@@ -41,6 +41,9 @@ export const cartReducer = (state = initialState, action) => {
         ...state,
         cartProducts: [...filteredArr],
       };
+
+
+
 
     case "DELETE_PRODUCT_FROM_CART":
       let cartArr = [...state.cartProducts];
@@ -51,14 +54,18 @@ export const cartReducer = (state = initialState, action) => {
       });
       return { ...state, cartProducts: [...cartArr] };
 
+
+
     case "EMPTY_CART":
       return { state, cartProducts: [] };
+
+
 
     case "HANDLE_QUANTITY":
       let cartProd = [...state.cartProducts];
       
       if (action.payload.str === "increase") {
-        cartProd[action.payload.index].quantity += 1;
+        cartProd[action.payload.index].quantity = parseInt(cartProd[action.payload.index].quantity) +1;
         cartProd[action.payload.index].price =
           cartProd[action.payload.index].quantity *
           cartProd[action.payload.index].product.price;
@@ -78,6 +85,8 @@ export const cartReducer = (state = initialState, action) => {
       }
       return { ...state, cartProducts: [...cartProd] };
 
+
+      
     default:
       return state;
   }

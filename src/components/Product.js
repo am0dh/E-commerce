@@ -3,11 +3,15 @@ import "./Product.css";
 import { useDispatch } from "react-redux";
 import {addToCart} from '../actions/cartAction'
 
-
-
-
 function Product(props) {
   const style = { width: "18rem", display: "inline-block", margin: "20px" };
+  const imageStyle={
+    display:"block",
+    margin:"0px auto",
+    height:"200px",
+    width:"200px"
+  }
+
   const dispatch=useDispatch();
 
   const handleCartAdder=()=>{
@@ -19,7 +23,7 @@ function Product(props) {
 
   return (
     <div className="card" style={style}>
-      <img className="card-img-top" src="..." alt="Card image cap" />
+      <img className="card-img-top" style={imageStyle} src={props.data.image} alt={props.data.image} />
       <div className="card-body">
         <h5 className="card-title">{props.data.title}</h5>
         

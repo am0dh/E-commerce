@@ -1,15 +1,17 @@
 import React,{useState} from 'react';
 import {useDispatch,useSelector} from 'react-redux'
-import {login} from '../actions/loginAction'
+
+import {loginAuthenticate} from '../actions/loginAction'
+//import {auth} from '../firebase'
 
 
 function LoginPage(props) {
     const [inputs, setInputs] = useState({
-        username: '',
+        email: '',
         password: ''
     });
     const [submitted, setSubmitted] = useState(false);
-    const { username, password } = inputs;
+    const { email, password } = inputs;
     const loggingIn = useSelector(state => state.loginReducer.loggingIn);
     const dispatch = useDispatch();
     
@@ -20,23 +22,30 @@ function LoginPage(props) {
         setInputs(inputs => ({ ...inputs, [name]: value }));
     }
 
-    function handleSubmit(e) {
-        e.preventDefault();
+    // function handleSubmit(e) {
+    //     e.preventDefault();
 
-        setSubmitted(true);
-        if (username && password) {
+    //     setSubmitted(true);
+    //     if (email && password) {
            
-           dispatch(login(username, password));
-        }
+    //        dispatch(login(email, password));
+    //     }
+    // }
+
+    const handleAuthentication=(e)=>{
+        e.preventDefault()
+        dispatch(loginAuthenticate(email,password))
+
     }
+
     return (
         <div>
           <h2>Login</h2>
-            <form name="form" onSubmit={handleSubmit}>
+            <form name="form" onSubmit={handleAuthentication}>
                 <div className="form-group">
-                    <label>Username</label>
-                    <input type="text" name="username" value={username} onChange={handleChange} className={'form-control' + (submitted && !username ? ' is-invalid' : '')} />
-                    {submitted && !username &&
+                    <label>Email</label>
+                    <input type="text" name="email" value={email} onChange={handleChange} className={'form-control' + (submitted && !email ? ' is-invalid' : '')} />
+                    {submitted && !email &&
                         <div className="invalid-feedback">Username is required</div>
                     }
                 </div>

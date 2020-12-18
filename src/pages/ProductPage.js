@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import Product from "../components/Product";
+import Product from "../Components/Product";
 import {
   setFilteringState,
   setSearchState,

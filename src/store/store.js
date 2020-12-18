@@ -1,6 +1,6 @@
 import { createStore, applyMiddleware, compose } from "redux";
 import thunk from "redux-thunk";
-import allReducers from "./reducer/index";
+import allReducers from "../reducer/index"
 import {persistStore} from 'redux-persist'
 
 const initialState = {};
