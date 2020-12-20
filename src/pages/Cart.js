@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { useDispatch } from "react-redux";
 import CartProduct from "../Components/CartProduct";
 import { emptyCart } from "../actions/cartAction";
-import {placeOrder} from "../actions/orderAction"
+import { placeOrder } from "../actions/orderAction";
 function Cart(props) {
   const dispatch = useDispatch();
   const cartArr = props.cartReducer.cartProducts;
@@ -16,13 +16,10 @@ function Cart(props) {
     dispatch(emptyCart());
   };
 
-  const handlePlaceOrder=()=>{
-    if(props.loggedIn){
-    dispatch(placeOrder(cartArr,props.email ))
-  }
-  else(
-    alert('Login first')
-  )
+  const handlePlaceOrder = () => {
+    if (props.loggedIn) {
+      dispatch(placeOrder(cartArr, props.email));
+    } else alert("Login first");
   };
   return (
     <div>
@@ -76,7 +73,12 @@ function Cart(props) {
               </tr>
             </tbody>
           </table>
-          <button  className="btn btn-secondary btn-sm" onClick={handlePlaceOrder} >Place Order</button>
+          <button
+            className="btn btn-secondary btn-sm"
+            onClick={handlePlaceOrder}
+          >
+            Place Order
+          </button>
         </>
       ) : (
         "Your Cart is empty. Add some products."
@@ -90,8 +92,8 @@ function Cart(props) {
 const mapPropsToState = (state, ownProps) => {
   return {
     cartReducer: state.cartReducer,
-    email:state.loginReducer.email,
-    loggedIn:state.loginReducer.loggedIn
+    email: state.loginReducer.email,
+    loggedIn: state.loginReducer.loggedIn,
   };
 };
 

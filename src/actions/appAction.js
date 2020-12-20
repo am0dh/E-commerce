@@ -77,3 +77,12 @@ export const resetPageNumber = () => async (dispatch) => {
     payload: 1,
   });
 };
+
+export const addToSingleProductPage=(data)=>async (dispatch)=>{
+  console.log(data)
+  dispatch({
+    type:'SET_SINGLE_PRODUCT_TO_PAGE',
+    payload:data
+  })
+}
+

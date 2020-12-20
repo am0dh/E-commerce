@@ -14,16 +14,15 @@ export const deleteProdCart = (index) => async (dispatch) => {
   });
 };
 
-export const emptyCart=()=> async (dispatch)=>{
+export const emptyCart = () => async (dispatch) => {
+  dispatch({
+    type: "EMPTY_CART",
+  });
+};
 
-    dispatch({
-        type:"EMPTY_CART"
-    })
-}
-
-export const handleCartQuantity=(str,index)=>async (dispatch)=>{
-    dispatch({
-        type:'HANDLE_QUANTITY',
-        payload:{str:str,index:index}
-    })
-}
+export const handleCartQuantity = (str, index) => async (dispatch) => {
+  dispatch({
+    type: "HANDLE_QUANTITY",
+    payload: { str: str, index: index },
+  });
+};

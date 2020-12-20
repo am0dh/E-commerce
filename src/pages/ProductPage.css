@@ -1,36 +1,30 @@
 .pagination {
-    
-    display: inline-flex;
-    justify-content: space-between;
-    list-style: none;
-    cursor: pointer;
-    outline:none;
-    
-  }
+  display: inline-flex;
+  justify-content: space-between;
+  list-style: none;
+  cursor: pointer;
+  outline: none;
+}
 
-  
-  .pagination a {
-    padding: 10px;
-    border-radius: 5px;
-    color: #6c757d;
-    outline:none;
-    background-color: #f8efef;
-    margin:5px;
-  }
-  
-  .pagination__link {
-    
-    font-weight: bold;
-  }
-  
-  .pagination__link--active a {
-    background-color: #6c757d;
-    
-    outline:none;
-    
-  }
-  
-  .pagination__link--disabled a {
-    color: rgb(191, 189, 201);
-   
-  }
+.pagination a {
+  padding: 10px;
+  border-radius: 5px;
+  color: #6c757d;
+  outline: none;
+  background-color: #f8efef;
+  margin: 5px;
+}
+
+.pagination__link {
+  font-weight: bold;
+}
+
+.pagination__link--active a {
+  background-color: #6c757d;
+
+  outline: none;
+}
+
+.pagination__link--disabled a {
+  color: rgb(191, 189, 201);
+}

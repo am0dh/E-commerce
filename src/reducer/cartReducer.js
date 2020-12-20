@@ -19,11 +19,9 @@ export const cartReducer = (state = initialState, action) => {
       }
       return { ...state, cartProducts: [...prodCartArr] };
 
-
-
     case "FETCH_PRODUCTS_FROM_USER_CART":
-    //below code for Array.prototypr.unique() is picked from stackoverflow 
-    //https://stackoverflow.com/questions/1584370/how-to-merge-two-arrays-in-javascript-and-de-duplicate-items
+      //below code for Array.prototypr.unique() is picked from stackoverflow
+      //https://stackoverflow.com/questions/1584370/how-to-merge-two-arrays-in-javascript-and-de-duplicate-items
       Array.prototype.unique = function () {
         var a = this.concat();
         for (var i = 0; i < a.length; ++i) {
@@ -42,9 +40,6 @@ export const cartReducer = (state = initialState, action) => {
         cartProducts: [...filteredArr],
       };
 
-
-
-
     case "DELETE_PRODUCT_FROM_CART":
       let cartArr = [...state.cartProducts];
       cartArr = cartArr.filter((item, index) => {
@@ -54,18 +49,15 @@ export const cartReducer = (state = initialState, action) => {
       });
       return { ...state, cartProducts: [...cartArr] };
 
-
-
     case "EMPTY_CART":
       return { state, cartProducts: [] };
 
-
-
     case "HANDLE_QUANTITY":
       let cartProd = [...state.cartProducts];
-      
+
       if (action.payload.str === "increase") {
-        cartProd[action.payload.index].quantity = parseInt(cartProd[action.payload.index].quantity) +1;
+        cartProd[action.payload.index].quantity =
+          parseInt(cartProd[action.payload.index].quantity) + 1;
         cartProd[action.payload.index].price =
           cartProd[action.payload.index].quantity *
           cartProd[action.payload.index].product.price;
@@ -85,8 +77,6 @@ export const cartReducer = (state = initialState, action) => {
       }
       return { ...state, cartProducts: [...cartProd] };
 
-
-      
     default:
       return state;
   }

@@ -1,0 +1,268 @@
+{
+  "users": [
+    {
+      "email": "amco@email.com",
+      "password": "$2a$10$cEasl4XUp.xzAS.2PCZDv.Daeb8XNec80xLgOy6ViEkuIO5BkBs5y",
+      "id": "wKY3Y76"
+    },
+    {
+      "email": "amodhmandloi2@gmail.com",
+      "password": "$2a$10$DIGkIZTCVLQjQjRv51UCH.euuDcLZW5RBhAhBhqFPg.tEF/3Kmy9S",
+      "id": "2"
+    },
+    {
+      "email": "olivier@mail.com",
+      "password": "$2a$10$yhyaM1zaqaXXu7nzQD5gbutROFETzyI5cpME/Q4bDLtYwu89y8qbG",
+      "id": "6"
+    }
+  ],
+  "productType": [
+    "gym",
+    "yoga",
+    "supplements"
+  ],
+  "brands": [
+    "kali_denali",
+    "mafia_mundeer"
+  ],
+  "totalProducts": [
+    "18"
+  ],
+  "allProducts": [
+    {
+      "id": "SUP1",
+      "type": "supplements",
+      "brand": "mafia_mundeer",
+      "title": "Protien Powder",
+      "description": "Protien supplement, 1 kg Pure whey protien",
+      "price": 1500,
+      "image": "https://images-na.ssl-images-amazon.com/images/I/716uIeq4rfL._SL1500_.jpg"
+    },
+    {
+      "id": "SUP2",
+      "type": "supplements",
+      "brand": "kali_denali",
+      "title": "Creatine powder",
+      "description": "Pre Workout, Gives you energy to work out",
+      "price": 1000,
+      "image": "https://5.imimg.com/data5/PG/TE/NC/SELLER-64482590/on-optimum-nutrition-micronized-creatine-powder-300gm-500x500.png"
+    },
+    {
+      "id": "SUP3",
+      "type": "supplements",
+      "brand": "kali_denali",
+      "title": "Protien powder",
+      "description": "Protien Supplement 1kg, for needing of extra power",
+      "price": 1300,
+      "image": "https://images-na.ssl-images-amazon.com/images/I/81Qwai8e2FL._SL1500_.jpg"
+    },
+    {
+      "id": "SUP4",
+      "type": "supplements",
+      "brand": "mafia_mundeer",
+      "title": "Creatine powder",
+      "description": "Pre Workout solution for heavy builders",
+      "price": 900,
+      "image": "https://www.qntsport.com/962-large_default/Creatine-monohydrate-powder.jpg"
+    },
+    {
+      "id": "XYZ1",
+      "type": "gym",
+      "brand": "mafia_mundeer",
+      "title": "Dumbbell",
+      "description": "A set of two dumbbells, 5 kg set",
+      "price": 500,
+      "image": "https://images-na.ssl-images-amazon.com/images/I/71M%2BH6iusEL._SX425_.jpg"
+    },
+    {
+      "id": "XYZ2",
+      "type": "gym",
+      "brand": "mafia_mundeer",
+      "title": "Barbell",
+      "description": "A barbell and set of weights",
+      "price": 1000,
+      "image": "https://d54m27zy2kwll.cloudfront.net/MAIN/AF-TEAM-BARBELL.JPG"
+    },
+    {
+      "id": "XYZ3",
+      "type": "gym",
+      "brand": "kali_denali",
+      "title": "Gym Bench",
+      "description": "A bench for exercise",
+      "price": 1200,
+      "image": "https://images-na.ssl-images-amazon.com/images/I/3190JWLuNHL._SX425_.jpg"
+    },
+    {
+      "id": "XYZ4",
+      "type": "gym",
+      "brand": "kali_denali",
+      "title": "Dumbbell",
+      "description": "A set of two dumbbells",
+      "price": 600,
+      "image": "https://contents.mediadecathlon.com/p188422/d645fd324da4c25090206fdbb5acdd1c/p188422.jpg"
+    },
+    {
+      "id": "XYZ5",
+      "type": "gym",
+      "brand": "mafia_mundeer",
+      "title": "Skipping Rope",
+      "description": "A skipping rope 3 meters long",
+      "price": 200,
+      "image": "https://images-na.ssl-images-amazon.com/images/I/61QnLHq207L._SX425_.jpg"
+    },
+    {
+      "id": "YOG1",
+      "type": "yoga",
+      "brand": "mafia_mundeer",
+      "title": "Yoga Mat",
+      "description": "A Yoga Mat",
+      "price": 500,
+      "image": "https://www.yogaaccessories.com/assets/images/Gaia%20Eco_Black_Stock4.jpg"
+    },
+    {
+      "id": "YOG2",
+      "type": "yoga",
+      "brand": "kali_denali",
+      "title": "Yoga Mat",
+      "description": "A Yoga Mat",
+      "price": 100,
+      "image": "https://cdn.shopify.com/s/files/1/0030/8484/5169/products/UNICORNMAT1_1024x1024.jpg?v=1594300994"
+    },
+    {
+      "id": "YOG3",
+      "type": "yoga",
+      "brand": "kali_denali",
+      "title": "Yoga Book",
+      "description": "Yoga book for beginners",
+      "price": 400,
+      "image": "https://rukminim1.flixcart.com/image/352/352/jvv9zm80/book/7/3/3/sampurna-yog-vidya-original-imafgfg5jhgcqenz.jpeg?q=70"
+    }
+  ],
+  "amodhmandloi2@gmail.com.cart": [
+    {
+      "product": {
+        "id": "YOG3",
+        "type": "yoga",
+        "brand": "kali_denali",
+        "title": "Yoga Book",
+        "description": "Yoga book for beginners",
+        "price": 400,
+        "image": "https://rukminim1.flixcart.com/image/352/352/jvv9zm80/book/7/3/3/sampurna-yog-vidya-original-imafgfg5jhgcqenz.jpeg?q=70"
+      },
+      "quantity": 1,
+      "price": 400
+    }
+  ],
+  "amodhmandloi2@gmail.com.orders": [
+    {
+      "cartArr": [
+        {
+          "product": {
+            "id": "SUP1",
+            "type": "supplements",
+            "brand": "mafia_mundeer",
+            "title": "Protien Powder",
+            "description": "Protien supplement, 1 kg Pure whey protien",
+            "price": 1500,
+            "image": "https://images-na.ssl-images-amazon.com/images/I/716uIeq4rfL._SL1500_.jpg"
+          },
+          "quantity": 4,
+          "price": 6000
+        },
+        {
+          "product": {
+            "id": "SUP3",
+            "type": "supplements",
+            "brand": "kali_denali",
+            "title": "Protien powder",
+            "description": "Protien Supplement 1kg, for needing of extra power",
+            "price": 1300,
+            "image": "https://images-na.ssl-images-amazon.com/images/I/81Qwai8e2FL._SL1500_.jpg"
+          },
+          "quantity": 2,
+          "price": 2600
+        },
+        {
+          "product": {
+            "id": "SUP4",
+            "type": "supplements",
+            "brand": "mafia_mundeer",
+            "title": "Creatine powder",
+            "description": "Pre Workout solution for heavy builders",
+            "price": 900,
+            "image": "https://www.qntsport.com/962-large_default/Creatine-monohydrate-powder.jpg"
+          },
+          "quantity": 1,
+          "price": 900
+        }
+      ],
+      "totalPrice": 9500,
+      "id": 1
+    },
+    {
+      "cartArr": [
+        {
+          "product": {
+            "id": "SUP1",
+            "type": "supplements",
+            "brand": "mafia_mundeer",
+            "title": "Protien Powder",
+            "description": "Protien supplement, 1 kg Pure whey protien",
+            "price": 1500,
+            "image": "https://images-na.ssl-images-amazon.com/images/I/716uIeq4rfL._SL1500_.jpg"
+          },
+          "quantity": 1,
+          "price": 1500
+        },
+        {
+          "product": {
+            "id": "SUP2",
+            "type": "supplements",
+            "brand": "kali_denali",
+            "title": "Creatine powder",
+            "description": "Pre Workout, Gives you energy to work out",
+            "price": 1000,
+            "image": "https://5.imimg.com/data5/PG/TE/NC/SELLER-64482590/on-optimum-nutrition-micronized-creatine-powder-300gm-500x500.png"
+          },
+          "quantity": 1,
+          "price": 1000
+        }
+      ],
+      "totalPrice": 2500,
+      "id": 2
+    },
+    {
+      "cartArr": [
+        {
+          "product": {
+            "id": "SUP1",
+            "type": "supplements",
+            "brand": "mafia_mundeer",
+            "title": "Protien Powder",
+            "description": "Protien supplement, 1 kg Pure whey protien",
+            "price": 1500,
+            "image": "https://images-na.ssl-images-amazon.com/images/I/716uIeq4rfL._SL1500_.jpg"
+          },
+          "quantity": 1,
+          "price": 1500
+        },
+        {
+          "product": {
+            "id": "SUP2",
+            "type": "supplements",
+            "brand": "kali_denali",
+            "title": "Creatine powder",
+            "description": "Pre Workout, Gives you energy to work out",
+            "price": 1000,
+            "image": "https://5.imimg.com/data5/PG/TE/NC/SELLER-64482590/on-optimum-nutrition-micronized-creatine-powder-300gm-500x500.png"
+          },
+          "quantity": 1,
+          "price": 1000
+        }
+      ],
+      "totalPrice": 2500,
+      "id": 3
+    }
+  ],
+  "command":"json-server users.json -m ./node_modules/json-server-auth"
+}

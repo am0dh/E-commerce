@@ -1,0 +1,44 @@
+.main-content{
+    margin:50px;
+    display:inline-flex;
+}
+
+.main-desc{
+    margin-left: 30px;
+}
+
+.product-title{
+    margin-top: 30px;
+    font-size: 30px;
+    color:rgb(179, 90, 90);
+    display: block;
+}
+
+.product-price{
+    font-size: 20px;
+    color:rgb(226, 19, 19);
+    display: block;
+}
+
+.product-brand{
+    margin-top:20px;
+    text-transform: capitalize;
+    display: block;
+}
+
+.product-type{
+    text-transform: capitalize;
+    display: block;
+}
+
+.product-description{
+    margin: 20px 0px;
+    display: block;
+}
+
+img {
+width:400px;
+height:auto;
+
+}
+

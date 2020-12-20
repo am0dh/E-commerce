@@ -1,5 +1,5 @@
 import React from "react";
-import {connect} from 'react-redux'
+import { connect } from "react-redux";
 import { NavLink } from "react-router-dom";
 
 const Navigation = (props) => {
@@ -32,7 +32,7 @@ const Navigation = (props) => {
                 Cart({props.cartCount})
               </NavLink>
             </li>
-            
+
             <li className="nav-item">
               <NavLink className="nav-link" to="/products">
                 Products
@@ -45,9 +45,8 @@ const Navigation = (props) => {
   );
 };
 
-const mapStateToProps=(state,ownProps)=>{
-
-  return {cartCount: state.cartReducer.cartProducts.length}
-}
+const mapStateToProps = (state, ownProps) => {
+  return { cartCount: state.cartReducer.cartProducts.length };
+};
 
 export default connect(mapStateToProps)(Navigation);

@@ -3,7 +3,6 @@ import { useDispatch } from "react-redux";
 import { deleteProdCart, handleCartQuantity } from "../actions/cartAction";
 
 function CartProduct(props) {
-  
   const dispatch = useDispatch();
   const handleRemoveProdCart = (index) => {
     dispatch(deleteProdCart(index));
@@ -14,24 +13,14 @@ function CartProduct(props) {
   };
 
   return (
-    <tr style={{textTransform:'capitalize'}}>
+    <tr style={{ textTransform: "capitalize" }}>
       <td>{props.data.title}</td>
-      <td >{props.data.brand}</td>
-     
+      <td>{props.data.brand}</td>
+
       <td>
-        <span
-          onClick={() => handleQuantity("decrease", props.index)}
-          
-        >
-          - {" "}
-        </span>
+        <span onClick={() => handleQuantity("decrease", props.index)}>- </span>
         {props.quantity}
-        <span
-          onClick={() => handleQuantity("increase", props.index)}
-          
-        >
-         {" "} +
-        </span>
+        <span onClick={() => handleQuantity("increase", props.index)}> +</span>
       </td>
       <td>{props.price}</td>
       <td>

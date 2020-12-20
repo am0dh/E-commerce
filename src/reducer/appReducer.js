@@ -9,7 +9,8 @@ let initialState = {
   searchBar: "",
   productPerPage: 5,
   pageNumber: 1,
-  totalProducts:10
+  totalProducts: 10,
+  singleProduct: {},
 };
 
 export const appReducer = (state = { ...initialState }, action) => {
@@ -36,11 +37,10 @@ export const appReducer = (state = { ...initialState }, action) => {
         priceLow: 1,
         priceHigh: 9999,
       };
-
-    
+    case "SET_SINGLE_PRODUCT_TO_PAGE":
+      return { ...state, singleProduct: { ...action.payload } };
 
     case "SET_PAGE_NUMBER":
-       
       return { ...state, pageNumber: action.payload };
     default:
       return state;
