@@ -264,5 +264,5 @@
       "id": 3
     }
   ],
-  "command":"json-server users.json -m ./node_modules/json-server-auth"
+  "command":["json-server users.json -m ./node_modules/json-server-auth"]
 }

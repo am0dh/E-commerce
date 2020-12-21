@@ -29,15 +29,27 @@ function LoginPage(props) {
   //     }
   // }
 
+  const formStyle={
+   
+    width:"500px",
+    height:"auto",
+    margin:"50px auto",
+    padding:"60px",
+    border: "1px solid lightgrey",
+    borderRadius: "13px",
+    backgroundColor:"rgb(243, 242, 242)"
+
+  }
+
   const handleAuthentication = (e) => {
     e.preventDefault();
     dispatch(loginAuthenticate(email, password));
   };
 
   return (
-    <div>
+    <div style={formStyle}>
       <h2>Login</h2>
-      <form name="form" onSubmit={handleAuthentication}>
+      <form name="form" onSubmit={handleAuthentication} >
         <div className="form-group">
           <label>Email</label>
           <input

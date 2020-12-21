@@ -9,12 +9,14 @@ export const cartReducer = (state = initialState, action) => {
       let prodCartArr = [...state.cartProducts];
       if (prodCartArr.length === 0) {
         prodCartArr.push(action.payload);
+        alert("Added to cart");
       } else {
         let variable = prodCartArr.some(
           (item) => item.product.id === action.payload.product.id
         );
         if (!variable) {
           prodCartArr.push(action.payload);
+          alert("Added to Cart");
         }
       }
       return { ...state, cartProducts: [...prodCartArr] };

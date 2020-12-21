@@ -6,10 +6,10 @@ import { Link } from "react-router-dom";
 import {addToSingleProductPage} from '../actions/appAction'
 
 function Product(props) {
-  const style = { width: "18rem", display: "inline-block", margin: "20px" };
+  const style = { width: "18rem", display: "inline-block", margin: "15px" };
   const imageStyle = {
     display: "block",
-    margin: "0px auto",
+    margin: "5px auto",
     height: "200px",
     width: "200px",
   };
@@ -33,18 +33,18 @@ function Product(props) {
           alt={props.data.image}
         />
         <div className="card-body">
-          <h5 className="card-title">{props.data.title}</h5>
+          <h5 className="card-title" style={{color:"black"}}>{props.data.title}</h5>
         </div>
-        <ul className="list-group list-group-flush">
-          <li className="list-group-item">Brand: {props.data.brand}</li>
-          <li className="list-group-item">Type: {props.data.type}</li>
-          <li className="list-group-item">
+        <ul  className="list-group list-group-flush">
+          <li  style={{backgroundColor:"rgb(243, 242, 242)"}} className="list-group-item">Brand: {props.data.brand}</li>
+          <li style={{backgroundColor:"rgb(243, 242, 242)"}} className="list-group-item">Type: {props.data.type}</li>
+          <li style={{backgroundColor:"rgb(243, 242, 242)"}} className="list-group-item">
             Price: <b>&#8377;{props.data.price}</b>
           </li>
         </ul>
       </Link>
-      <div className="card-body">
-        <div onClick={handleCartAdder} className="btn btn-secondary btn-sm">
+      <div style={{backgroundColor:"rgb(243, 242, 242)"}}  className="card-body">
+        <div onClick={handleCartAdder} className="btn btn-outline-secondary btn-sm">
           Add To Cart
         </div>
       </div>

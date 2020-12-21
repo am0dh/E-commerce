@@ -98,7 +98,7 @@ function ProductPage(props) {
 
   return (
     <div>
-      <form onSubmit={handleFilterSubmit}>
+      <form style={{ margin: "auto" }} onSubmit={handleFilterSubmit}>
         <div style={{ display: "inline-block", margin: "10px", width: 300 }}>
           <div className="form-group">
             <select className="form-control" ref={productTypeRef}>

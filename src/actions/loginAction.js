@@ -3,7 +3,6 @@ export const loginAuthenticate = (email, password) => async (dispatch) => {
     email: email,
     password: password,
   });
-
   const reqOptions = {
     method: "POST",
     headers: { "Content-Type": "application/json" },
@@ -18,21 +17,28 @@ export const loginAuthenticate = (email, password) => async (dispatch) => {
       type: "SET_USER",
       payload: { email, password, responseToken, loggedIn: true },
     });
+
     const userCart = await fetch(`http://localhost:3000/${email}.cart`);
     const cartJson = await userCart.json();
-    console.log(cartJson);
     dispatch({
       type: "FETCH_PRODUCTS_FROM_USER_CART",
       payload: cartJson,
     });
-  } else {
-    alert("Wrong email or password");
+
+    const userOrders = await fetch(`http://localhost:3000/${email}.orders`)
+    const ordersJson=await userOrders.json();
+    console.log(ordersJson)
     dispatch({
-      type: "SET_LOGIN_ERROR",
-      payload: responseToken,
-    });
+      type:"SET_USER_ORDERS",
+      payload:ordersJson
+    })
+  }
+  else {
+    alert("Wrong email or password");
   }
 };
+
+
 
 export const resetUser = () => async (dispatch) => {
   dispatch({
