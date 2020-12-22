@@ -13,24 +13,22 @@ function Profile(props) {
     window.location.reload();
   };
 
+  console.log(props.orders);
+
   return (
     <div>
       {props.loggedIn ? (
         <div style={{ margin: "10px" }}>
-          <h4 style={basicMargin}>Logged In as {props.email}</h4>
+          <h4 style={basicMargin}>Welcome {props.email}</h4>
           <div className="btn btn-secondary" onClick={logout}>
             Logout
           </div>
+          <hr />
           <h5 style={basicMargin}>Your Orders</h5>
-          <div class="container">
-            <div
-              class="panel-group"
-              id="accordion"
-              role="tablist"
-              aria-multiselectable="true"
-            >
+          <div class="container" style={{ float: "left" }}>
+            <div id="accordion" class="panel-group">
               {props.orders.map((item) => (
-                <Order data={item} key={item.id} />
+                <Order data={item} key={item.id} email={props.email} />
               ))}
             </div>
           </div>

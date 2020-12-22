@@ -22,17 +22,40 @@ export const placeOrder = (cartArr, userEmail) => async (dispatch) => {
     dispatch({
       type: "EMPTY_CART",
     });
-    const userOrders = await fetch(`http://localhost:3000/${userEmail}.orders`)
-    const ordersJson=await userOrders.json();
-    console.log(ordersJson)
+    const userOrders = await fetch(`http://localhost:3000/${userEmail}.orders`);
+    const ordersJson = await userOrders.json();
+    console.log(ordersJson);
     dispatch({
-      type:"SET_USER_ORDERS",
-      payload:ordersJson
-    })
-  }
-  
-  else alert(response.status, "", response.statusText);
+      type: "SET_USER_ORDERS",
+      payload: ordersJson,
+    });
+  } else alert(response.status, "", response.statusText);
 };
 
+export const reorder = (data, userEmail) => async (dispatch) => {
+  const orderItem = {
+    cartArr: [...data.cartArr],
+    totalPrice: data.totalPrice,
+  };
+  const reqOptions = {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(orderItem),
+  };
 
-
+  const placeOrder = await fetch(
+    `http://localhost:3000/${userEmail}.orders`,
+    reqOptions
+  );
+  const response = await placeOrder;
+  if (response.ok) {
+    alert("Order Placed");
+    const userOrders = await fetch(`http://localhost:3000/${userEmail}.orders`);
+    const ordersJson = await userOrders.json();
+    console.log(ordersJson);
+    dispatch({
+      type: "SET_USER_ORDERS",
+      payload: ordersJson,
+    });
+  } else alert(response.status, "", response.statusText);
+};

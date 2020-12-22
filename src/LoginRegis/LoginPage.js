@@ -19,27 +19,15 @@ function LoginPage(props) {
     setInputs((inputs) => ({ ...inputs, [name]: value }));
   }
 
-  // function handleSubmit(e) {
-  //     e.preventDefault();
-
-  //     setSubmitted(true);
-  //     if (email && password) {
-
-  //        dispatch(login(email, password));
-  //     }
-  // }
-
-  const formStyle={
-   
-    width:"500px",
-    height:"auto",
-    margin:"50px auto",
-    padding:"60px",
+  const formStyle = {
+    width: "500px",
+    height: "auto",
+    margin: "50px auto",
+    padding: "60px",
     border: "1px solid lightgrey",
     borderRadius: "13px",
-    backgroundColor:"rgb(243, 242, 242)"
-
-  }
+    backgroundColor: "rgb(243, 242, 242)",
+  };
 
   const handleAuthentication = (e) => {
     e.preventDefault();
@@ -49,7 +37,7 @@ function LoginPage(props) {
   return (
     <div style={formStyle}>
       <h2>Login</h2>
-      <form name="form" onSubmit={handleAuthentication} >
+      <form name="form" onSubmit={handleAuthentication}>
         <div className="form-group">
           <label>Email</label>
           <input

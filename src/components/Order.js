@@ -1,25 +1,71 @@
-import React from 'react';
-import './Order.css'
+import React from "react";
+import { useDispatch } from "react-redux";
+import "./Order.css";
+import { reorder } from "../actions/orderAction";
 
 const Order = (props) => {
-    return (
-        <div className="panel panel-default">
-        <div className="panel-heading" role="tab" id={`heading${props.id}`}>
-          <h4 className="panel-title">
-          <a className="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href={`#collapse${props.id}`} aria-expanded="false" aria-controls={`collapse${props.id}`}>
-            Collapsible Group Item #2
+  const dispatch = useDispatch();
+
+  const handleReorder = () => {
+    dispatch(reorder(props.data, props.email));
+    console.log(props.data);
+  };
+
+  return (
+    <div className="panel">
+      <div className="panel-heading">
+        <h4 className="panel-title">
+          <a
+            href={`#panelBody${props.data.id}`}
+            className="accordion-toggle"
+            data-toggle="collapse"
+            data-parent="#accordion"
+          >
+            Order {props.data.id} &nbsp; Total Price:&#8377;
+            {props.data.totalPrice} &nbsp;{" "}
+            <button
+              onClick={handleReorder}
+              className="btn btn-sm btn-secondary"
+            >
+              {" "}
+              Re-order
+            </button>
           </a>
         </h4>
-        </div>
-        <div id={`collapse${props.id}`} className="panel-collapse collapse" role="tabpanel" aria-labelledby={`heading${props.data}`}>
-          <div className="panel-body">
-            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird
-            on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table,
-            raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-          </div>
+      </div>
+      <div
+        id={`panelBody${props.data.id}`}
+        className="panel-collapse collapse in"
+      >
+        <div className="panel-body">
+          <p>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">Item Name</th>
+                  <th scope="col">Brand</th>
+                  <th scope="col">Actual Price</th>
+                  <th scope="col">Quantity</th>
+                  <th scope="col">Quantity*Actual Price</th>
+                </tr>
+              </thead>
+              <tbody>
+                {props.data.cartArr.map((item) => (
+                  <tr>
+                    <td>{item.product.title}</td>
+                    <td>{item.product.brand}</td>
+                    <td>&#8377;{item.product.price}</td>
+                    <td>{item.quantity}</td>
+                    <td>&#8377;{item.price}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </p>
         </div>
       </div>
-    );
+    </div>
+  );
 };
 
 export default Order;

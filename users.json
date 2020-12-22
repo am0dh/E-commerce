@@ -139,19 +139,7 @@
     }
   ],
   "amodhmandloi2@gmail.com.cart": [
-    {
-      "product": {
-        "id": "YOG3",
-        "type": "yoga",
-        "brand": "kali_denali",
-        "title": "Yoga Book",
-        "description": "Yoga book for beginners",
-        "price": 400,
-        "image": "https://rukminim1.flixcart.com/image/352/352/jvv9zm80/book/7/3/3/sampurna-yog-vidya-original-imafgfg5jhgcqenz.jpeg?q=70"
-      },
-      "quantity": 1,
-      "price": 400
-    }
+  
   ],
   "amodhmandloi2@gmail.com.orders": [
     {
@@ -262,7 +250,227 @@
       ],
       "totalPrice": 2500,
       "id": 3
+    },
+    {
+      "cartArr": [
+        {
+          "product": {
+            "id": "YOG3",
+            "type": "yoga",
+            "brand": "kali_denali",
+            "title": "Yoga Book",
+            "description": "Yoga book for beginners",
+            "price": 400,
+            "image": "https://rukminim1.flixcart.com/image/352/352/jvv9zm80/book/7/3/3/sampurna-yog-vidya-original-imafgfg5jhgcqenz.jpeg?q=70"
+          },
+          "quantity": 1,
+          "price": 400
+        },
+        {
+          "product": {
+            "id": "SUP1",
+            "type": "supplements",
+            "brand": "mafia_mundeer",
+            "title": "Protien Powder",
+            "description": "Protien supplement, 1 kg Pure whey protien",
+            "price": 1500,
+            "image": "https://images-na.ssl-images-amazon.com/images/I/716uIeq4rfL._SL1500_.jpg"
+          },
+          "quantity": 1,
+          "price": 1500
+        }
+      ],
+      "totalPrice": 1900,
+      "id": 4
+    },
+    {
+      "cartArr": [
+        {
+          "product": {
+            "id": "YOG3",
+            "type": "yoga",
+            "brand": "kali_denali",
+            "title": "Yoga Book",
+            "description": "Yoga book for beginners",
+            "price": 400,
+            "image": "https://rukminim1.flixcart.com/image/352/352/jvv9zm80/book/7/3/3/sampurna-yog-vidya-original-imafgfg5jhgcqenz.jpeg?q=70"
+          },
+          "quantity": 8,
+          "price": 3200
+        }
+      ],
+      "totalPrice": 3200,
+      "id": 5
+    },
+    {
+      "cartArr": [
+        {
+          "product": {
+            "id": "SUP1",
+            "type": "supplements",
+            "brand": "mafia_mundeer",
+            "title": "Protien Powder",
+            "description": "Protien supplement, 1 kg Pure whey protien",
+            "price": 1500,
+            "image": "https://images-na.ssl-images-amazon.com/images/I/716uIeq4rfL._SL1500_.jpg"
+          },
+          "quantity": 4,
+          "price": 6000
+        },
+        {
+          "product": {
+            "id": "SUP3",
+            "type": "supplements",
+            "brand": "kali_denali",
+            "title": "Protien powder",
+            "description": "Protien Supplement 1kg, for needing of extra power",
+            "price": 1300,
+            "image": "https://images-na.ssl-images-amazon.com/images/I/81Qwai8e2FL._SL1500_.jpg"
+          },
+          "quantity": 2,
+          "price": 2600
+        },
+        {
+          "product": {
+            "id": "SUP4",
+            "type": "supplements",
+            "brand": "mafia_mundeer",
+            "title": "Creatine powder",
+            "description": "Pre Workout solution for heavy builders",
+            "price": 900,
+            "image": "https://www.qntsport.com/962-large_default/Creatine-monohydrate-powder.jpg"
+          },
+          "quantity": 1,
+          "price": 900
+        }
+      ],
+      "totalPrice": 9500,
+      "id": 6
+    },
+    {
+      "cartArr": [
+        {
+          "product": {
+            "id": "SUP1",
+            "type": "supplements",
+            "brand": "mafia_mundeer",
+            "title": "Protien Powder",
+            "description": "Protien supplement, 1 kg Pure whey protien",
+            "price": 1500,
+            "image": "https://images-na.ssl-images-amazon.com/images/I/716uIeq4rfL._SL1500_.jpg"
+          },
+          "quantity": 4,
+          "price": 6000
+        },
+        {
+          "product": {
+            "id": "SUP3",
+            "type": "supplements",
+            "brand": "kali_denali",
+            "title": "Protien powder",
+            "description": "Protien Supplement 1kg, for needing of extra power",
+            "price": 1300,
+            "image": "https://images-na.ssl-images-amazon.com/images/I/81Qwai8e2FL._SL1500_.jpg"
+          },
+          "quantity": 2,
+          "price": 2600
+        },
+        {
+          "product": {
+            "id": "SUP4",
+            "type": "supplements",
+            "brand": "mafia_mundeer",
+            "title": "Creatine powder",
+            "description": "Pre Workout solution for heavy builders",
+            "price": 900,
+            "image": "https://www.qntsport.com/962-large_default/Creatine-monohydrate-powder.jpg"
+          },
+          "quantity": 1,
+          "price": 900
+        }
+      ],
+      "totalPrice": 9500,
+      "id": 7
+    },
+    {
+      "cartArr": [
+        {
+          "product": {
+            "id": "YOG3",
+            "type": "yoga",
+            "brand": "kali_denali",
+            "title": "Yoga Book",
+            "description": "Yoga book for beginners",
+            "price": 400,
+            "image": "https://rukminim1.flixcart.com/image/352/352/jvv9zm80/book/7/3/3/sampurna-yog-vidya-original-imafgfg5jhgcqenz.jpeg?q=70"
+          },
+          "quantity": 1,
+          "price": 400
+        },
+        {
+          "product": {
+            "id": "SUP1",
+            "type": "supplements",
+            "brand": "mafia_mundeer",
+            "title": "Protien Powder",
+            "description": "Protien supplement, 1 kg Pure whey protien",
+            "price": 1500,
+            "image": "https://images-na.ssl-images-amazon.com/images/I/716uIeq4rfL._SL1500_.jpg"
+          },
+          "quantity": 1,
+          "price": 1500
+        }
+      ],
+      "totalPrice": 1900,
+      "id": 8
+    },
+    {
+      "cartArr": [
+        {
+          "product": {
+            "id": "SUP1",
+            "type": "supplements",
+            "brand": "mafia_mundeer",
+            "title": "Protien Powder",
+            "description": "Protien supplement, 1 kg Pure whey protien",
+            "price": 1500,
+            "image": "https://images-na.ssl-images-amazon.com/images/I/716uIeq4rfL._SL1500_.jpg"
+          },
+          "quantity": 4,
+          "price": 6000
+        },
+        {
+          "product": {
+            "id": "SUP3",
+            "type": "supplements",
+            "brand": "kali_denali",
+            "title": "Protien powder",
+            "description": "Protien Supplement 1kg, for needing of extra power",
+            "price": 1300,
+            "image": "https://images-na.ssl-images-amazon.com/images/I/81Qwai8e2FL._SL1500_.jpg"
+          },
+          "quantity": 2,
+          "price": 2600
+        },
+        {
+          "product": {
+            "id": "SUP4",
+            "type": "supplements",
+            "brand": "mafia_mundeer",
+            "title": "Creatine powder",
+            "description": "Pre Workout solution for heavy builders",
+            "price": 900,
+            "image": "https://www.qntsport.com/962-large_default/Creatine-monohydrate-powder.jpg"
+          },
+          "quantity": 1,
+          "price": 900
+        }
+      ],
+      "totalPrice": 9500,
+      "id": 9
     }
   ],
-  "command":["json-server users.json -m ./node_modules/json-server-auth"]
+  "command": [
+    "json-server users.json -m ./node_modules/json-server-auth"
+  ]
 }
